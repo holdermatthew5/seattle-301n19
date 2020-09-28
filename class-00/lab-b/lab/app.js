@@ -91,11 +91,7 @@ console.log('Hello from the old object function', oldObject(['hi', 'hello', 'are
 // STEP 9
 // With an arrow function, we need to wrap our object in parentheses
 // Otherwise, it will be interpreted as a code block
-const newObject = array => ({
-  firstValue: array[0],
-  secondValue: array[1],
-  thirdValue: array[2]
-});
+const newObject = array => ({ firstValue: array[0], secondValue: array[1], thirdValue: array[2]});
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log('Hello from the new object function', newObject(['hi', 'hello', 'are you there?']));
@@ -114,21 +110,13 @@ const sum = (a, b, c, d) => `${a + b + c + d}`;
 console.log(sum(1, 2, 3, 4));
 
 
-let objectLit = () => ({
-    key1: 'value1',
-    key2: 'value2',
-    key3: 'value3',
-  });
+let objectLit = () => ({key1: 'value1', key2: 'value2', key3: 'value3',});
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(objectLit());
 
 
-let sumAndProduct = (a, b) => {
-  let sum = a + b;
-  let product = a * b;
-  return [sum, product];
-}
+let sumAndProduct = (a, b) => [a + b, a * b];
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(sumAndProduct(3, 9));
@@ -180,7 +168,7 @@ console.log(courseName());
 
 // I'm not 100% sure if I'm supposed to answer the question or play with the code so I'll answer then give the second console.log something to actually log.
 
-// arrow functions won't reference to the object when referencing `this` so it'd be easier to just make them regular functions.
+// Arrow functions won't reference the object when referencing `this` so it'd be easier to just make them regular functions.
 
 Student.prototype.scope = function() {
   console.log(this);
@@ -197,8 +185,10 @@ console.log(joe.scopeArrow());
 
 // TODO: Write a COMMENT below to answer the following questions.
 // 1. What is "this" when joe.scope() is invoked?
-//
+// This refers to the object instantiated by the Student constructor.
+
 // 2. What is "this" when joe.scopeArrow() is invoked?
-//
+// This refers to the DOM.
+
 // 3. Explain why "this" is different when an arrow function is used.
-//
+// The keyword function is necessary to create a proper prototype of a constructor. Without it the function cannot refer to the object without using the name of the object.
