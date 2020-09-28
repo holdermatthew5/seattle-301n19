@@ -128,11 +128,13 @@ let message = name => `Hello, ${name}!`;
 console.log(message('Allie'));
 
 
-let Student = function(name, age, hometown) {
-  this.name = name;
-  this.age = age;
-  this.hometown = hometown;
-};
+// let Student = function(name, age, hometown) {
+//   this.name = name;
+//   this.age = age;
+//   this.hometown = hometown;
+// };
+
+let Student = (name, age, hometown) => ({this:name = name, this:age = age, this:hometown = hometown});
 
 let joe = new Student('Joe', 'Schmoe', 100);
 
@@ -170,10 +172,7 @@ console.log(courseName());
 
 // Arrow functions won't reference the object when referencing `this` so it'd be easier to just make them regular functions.
 
-Student.prototype.scope = function() {
-  console.log(this);
-  return this.age;
-};
+Student.prototype.scope = ()  => {console.log(this);};
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(joe.scope());
