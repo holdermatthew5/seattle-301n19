@@ -104,7 +104,7 @@ console.log('Hello from the new object function', newObject(['hi', 'hello', 'are
 
 
 
-const sum = (a, b, c, d) => `${a + b + c + d}`;
+const sum = (a, b, c, d) => a + b + c + d;
 
 // TODO: Uncomment the following line of code to see the output in the browser console
 console.log(sum(1, 2, 3, 4));
